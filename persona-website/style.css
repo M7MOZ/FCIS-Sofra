@@ -34,11 +34,11 @@ a{
      display: flex; 
 }
 #sofra{
-    background-color: #173459;
+    background-color: rgb(21, 52, 89);
     color: white;
 }
 #bomb{
-    background-color: #FEF6E1;
+    background-color: rgb(255 248 230);
     color: black;
 }
 #oscar{

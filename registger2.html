@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Register</title>
+</head>
+<body>
+    <div class="loginbox">
+
+        <h1>Make Account</h1>
+        <form>
+            <div id="errors1"></div>
+            <p>New Username</p>
+            <input type="text" name="" placeholder="Enter Username" id="username">
+            <div id="errors2"></div>
+            <p>Set Password</p>
+            <input type="password" name="" placeholder="Enter Password" id="password">
+            <select id="choice">
+                <option>user</option>
+                <option>admin</option>
+            </select>
+            <input type="button" value="signin" id="regbtn" />
+        </form>
+    </div>
+    <script src="java.js"></script>
+    <script>
+        var username = document.getElementById("username")
+        var password = document.getElementById("password")
+        var regbtn = document.getElementById("regbtn")
+        var choice = document.getElementById("choice")
+
+
+
+
+        regbtn.addEventListener("click", function () {
+
+            usernames[x] = username.value.trim()
+            passwords[x] = password.value.trim()
+            roles[x] = choice.value
+            ids[x] = 2021170 + x
+            var uvalue = username.value.trim();
+            var pvalue = password.value.trim();
+            error1.innerHTML = ""
+            if (uvalue.length == 0) {
+                error1.innerHTML = "Must be filled"
+            }
+            if (uvalue.length <= 4 && uvalue.length > 0) {
+                error1.innerHTML = "The username must be more than 4 elements"
+            }
+            if (pvalue.length == 0) {
+                error2.innerHTML = "Must be filled"
+            }
+            if (pvalue.length <= 4 && pvalue.length > 0) {
+                error2.innerHTML = "The password must be more than 4 elements"
+            }
+            if (uvalue.length > 4 && pvalue.length > 4) {
+                localStorage.setItem("counter", x)
+
+                localStorage.setItem(usernamek[x], usernames[x])
+                localStorage.setItem(rolek[x], roles[x])
+                if (localStorage.getItem(rolek[x]) == "admin") {
+
+                    localStorage.setItem(passwordk[x], passwords[x] + "admin" + 10 + x + "")
+                }
+                else {
+                    localStorage.setItem(passwordk[x], passwords[x])
+                }
+                localStorage.setItem(idk[x], ids[x])
+                
+                increament()
+
+
+            }
+
+
+        })
+
+
+        console.log(localStorage)
+
+        console.log(x)
+
+       
+
+
+        function increament() {
+
+            x++
+            localStorage.setItem('counter', x)
+            limit++
+            localStorage.setItem('limit', limit)
+
+
+
+            location.reload()
+
+
+        }
+    </script>
+</body>
+</html>

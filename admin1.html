@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #tablediv{
+            width:700px;
+            height:500px;
+            background-color:white;
+            
+        }
+        table{
+            width:100%;
+            
+        }
+        td{
+            border:0;
+            margin-left:1px;
+            margin-right:1px;
+        }
+        body{
+            background-color:blue;
+        }
+    </style>
+</head>
+<body >
+
+
+    <div id="tablediv">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>username</th>
+                <th>role</th>
+                <th><input type="button" value="clear" onclick="localStorage.clear() , localStorage.setItem('counter', 0) ,localStorage.setItem('limit',1)" /></th>
+            </tr>
+        </thead>
+        <tbody id="usersdata">
+            
+        </tbody>
+        
+    </table>
+    <div>
+        <input id="delid"  type="text" />
+        <input id="delbtn" value=" delbtn" type="button" />
+    </div>
+    </div>
+    
+
+    <script src="java.js"></script>
+    <script >
+        var usersdata = document.getElementById("usersdata")
+        var delid = document.getElementById("delid")
+        var delbtn = document.getElementById("delbtn")
+        var z;
+        for (var i = 0; i < x; i++) {
+            if (localStorage.getItem(idk[i]) != null && localStorage.getItem(usernamek[i]) != null && localStorage.getItem(rolek[i]) != null) {
+
+                    usersdata.insertAdjacentHTML("beforeend", "<tr>" + "<td>" + localStorage.getItem(idk[i]) + "</td>" + "<td>" + localStorage.getItem(usernamek[i]) + "</td>" + "<td>" + localStorage.getItem(rolek[i]) + "</td>" + "</tr>")
+            }
+        }
+       
+        
+        delbtn.addEventListener("click", function () {
+            for (var i = 0; i < x; i++) {
+                if (delid.value.trim() == localStorage.getItem(idk[i])) {
+                    z = i;
+                    console.log(z)
+                    break;
+                }
+            }
+            if (localStorage.getItem(rolek[z]) != "admin") {
+                localStorage.removeItem(idk[z])
+                localStorage.removeItem(usernamek[z])
+                localStorage.removeItem(rolek[z])
+                location.reload()
+            }
+            
+        })
+            
+           
+        
+        
+        
+       
+ </script>
+</body>
+</html>

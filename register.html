@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/SearchResultsPage">
+<head>
+    <title>FCIS SOUFRA</title>
+
+    <link rel="stylesheet" href="HIGH.css">
+    <link href="https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&display=swap" rel="stylesheet">
+    <style>
+
+        body {
+            background-color: blue;
+        }
+
+        #title {
+            text-align: center;
+            margin-bottom: -5px;
+        }
+
+        #errors1, #errors2 {
+            background-color: #ec1329;
+            width: 300px;
+            margin-left: 150px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #choice{
+            width:80px;
+            height:40px;
+            margin-left:260px;
+        }
+
+        #login {
+            background-color: white;
+            display: inline-block;
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 600px;
+            height: 400px;
+            display: inline-block;
+        }
+
+
+
+        input {
+            position: relative;
+            width: 320px;
+            margin-left: 130px;
+            vertical-align: central;
+            margin-bottom: 20px;
+        }
+
+        
+
+        #buttondiv, #passworddiv, #usernamediv {
+            display: inline-block;
+            width: 600px;
+        }
+
+        label {
+            margin-left: 250px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        #buttondiv input {
+            margin-left: 260px;
+            margin-top: 20px;
+            width: 65px;
+            height: 50px;
+        }
+    </style>
+
+</head>
+<body id="content">
+
+
+    <div id="login">
+
+        <div id="usernamediv">
+            <div id="errors1">
+
+            </div>
+            <label for="username">USERNAME</label>
+            <input type="text" name="username" id="username" />
+        </div>
+
+        <div id="passworddiv">
+            <div id="errors2">
+
+            </div>
+            <label for="passord">PASSWORD</label>
+            <input type="password" name="password" id="password" />
+        </div>
+        <div id="choicediv">
+            <select id="choice">
+                <option>user</option>
+                <option>admin</option>
+            </select>
+
+        </div>
+        <div id="buttondiv">
+            <input type="button" value="signIn" id="regbtn" />
+        </div>
+
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="java.js"></script>
+    <script>
+
+
+        var username = document.getElementById("username")
+        var password = document.getElementById("password")
+        var regbtn = document.getElementById("regbtn")
+        var choice = document.getElementById("choice")
+        
+
+
+
+
+        regbtn.addEventListener("click", function () {
+
+            usernames[x] = username.value.trim()
+            passwords[x] = password.value.trim()
+            roles[x] = choice.value
+            ids[x] = 2021170+x
+            var uvalue = username.value.trim();
+            var pvalue = password.value.trim();
+            error1.innerHTML = ""
+            if (uvalue.length == 0) {
+                error1.innerHTML = "Must be filled"
+            }
+            if (uvalue.length <= 4 && uvalue.length > 0) {
+                error1.innerHTML = "The username must be more than 4 elements"
+            }
+            if (pvalue.length == 0) {
+                error2.innerHTML = "Must be filled"
+            }
+            if (pvalue.length <= 4 && pvalue.length > 0) {
+                error2.innerHTML = "The password must be more than 4 elements"
+            }
+            if (uvalue.length > 4 && pvalue.length > 4) {
+                localStorage.setItem("counter", x)
+
+                localStorage.setItem(usernamek[x], usernames[x])
+                localStorage.setItem(passwordk[x], passwords[x])
+                localStorage.setItem(rolek[x], roles[x])
+                localStorage.setItem(idk[x], ids[x])
+               
+                increament()
+                
+
+            }
+
+
+        })
+       
+
+        console.log(localStorage)
+        
+        console.log(x)
+
+        function increament() {
+            
+                x++
+                localStorage.setItem('counter', x)
+                limit++
+            localStorage.setItem('limit', limit)
+           
+                
+
+            location.reload()
+            
+            
+        }
+       
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

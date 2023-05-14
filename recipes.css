@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Indie+Flower&display=swap');
+*{
+    font-family: 'Catamaran', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    background-color:gainsboro;
+}
+header {
+    
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    position: fixed;
+    background-color: black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 100px ;
+}
+
+.logo{
+    margin-right: 50px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 2.3em;
+}
+.logo span{
+    font-family: 'Indie Flower', cursive;
+    text-decoration: none;
+    color: orange;
+    font-weight: 700;
+    font-size: 1.8em;
+    margin-left: 8px;
+}
+
+.navigation a{
+    font-family: 'Indie Flower', cursive;
+    color: white;
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: 500;
+    padding-right: 30px;
+    display: inline-block;
+    transition: 0.4s ease;
+    
+}
+
+.navigation a:hover{
+    transform: scale(1.1);
+    color: orange;
+}
+section {
+    padding: 100px 200px;
+}
+.main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.main h3{
+    position: absolute;
+    left: 20px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 3em;
+    font-weight: 1000;
+}
+.Brief{
+    font-size: 0.7em;
+    font-weight: 100;
+    width: 45%;
+    
+}
+
+.main img{
+   width: 50%;
+   height: 90%;
+   position: absolute;
+   right: 0px;
+   bottom: 0px;
+   
+    
+}
+ul{
+    list-style: none;
+}
+ul li::before {
+    content: "\2022";  
+    color: orange; 
+    font-weight: bold; 
+    display: inline-block;
+    width: 1em; 
+    margin-left: -1em; 
+}
+.ing h3{
+    font-family: 'Indie Flower', cursive;
+    font-size: 3em;
+    font-weight: 1000;
+    border-bottom: 2px solid orange;
+    padding-bottom: 10px;
+}
+ul li{
+    font-weight: 500;
+    padding: 20px;
+}
+.vid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

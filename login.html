@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>FCIS SOUFRA-login</title>
+    <style>
+        body{
+            background-color:blue;
+        }
+        #title {
+            text-align: center;
+            margin-bottom:-5px;
+        }
+        #errors1, #errors2 {
+            background-color: #ec1329;
+            width: 300px;
+            margin-left: 150px;
+            text-align: center;
+            margin-top:20px;
+        }
+        #login{
+            background-color:white;
+            display:inline-block;
+            position:absolute;
+            top:25%;
+            left:25%;
+            width:600px;
+            height:450px; 
+            display:inline-block;
+            
+        }
+        #registerLink{
+            text-align:center;
+            display:inline-block;
+            width:600px;
+        }
+        #registerLink p{
+            margin:8px 0;
+        }
+        
+        input{
+            position: relative;
+            width:320px;
+            margin-left:130px;
+            vertical-align:central;
+            
+            margin-bottom:20px;
+            
+        }
+        #buttondiv,#passworddiv,#usernamediv{
+            display:inline-block;
+            width:600px;
+
+            
+        }
+        label{
+           margin-left:250px;
+           margin-top:10px;
+           display:inline-block;
+        }
+        #buttondiv input{
+            margin-left:260px;
+            margin-top:20px;
+            width:75px;
+            height:50px;
+        }
+       
+      
+        
+    </style>
+</head>
+<body>
+
+
+
+    <div id="login">
+        <div id="titlediv">
+        <h1 id="title">LOGIN</h1>
+            <hr />
+            </div>
+       
+
+        <div id="usernamediv">
+            <div id="errors1">
+
+            </div>
+            <label for="username">USERNAME</label>
+            <input type="text" name="username" id="username" />
+        </div>
+
+        
+
+        <div id="passworddiv">
+            <div id="errors2">
+
+            </div>
+            <label for="passord">PASSWORD</label>
+            <input type="password" name="password" id="password" />
+        </div>
+
+        <div id="buttondiv">
+            <a href="#" id="atag"> <input type="button" value="login" id="logbtn" /></a>
+        </div>
+        <div id="registerLink">
+            <p>If you don't have account please</p>
+            
+            <a href="register.html" onclick="" >REGISTER HERE</a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        var link = document.getElementById("atag")
+        
+        var username = document.getElementById("username")
+        var password = document.getElementById("password")
+        var logbtn = document.getElementById("logbtn")
+        logbtn.addEventListener("click", function () {
+            for (var i = 0; i < x; i++) {
+                if (username.value.trim() == localStorage.getItem(usernamek[i]) && password.value == localStorage.getItem(passwordk[i])) {
+                    localStorage.setItem("currentid", (i))
+                    link.href = "fcis.html"
+                    break;
+                }
+
+                else {
+                    error1.innerHTML="please check your data"
+                }
+            }
+        })
+
+    </script>
+    <script src="java.js"></script>
+</body>
+</html>
